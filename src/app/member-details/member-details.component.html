@@ -1,0 +1,60 @@
+<div class="container-fluid col-md-6">
+  <h3 class="text-center lead" *ngIf="!memberId">{{'DETAILS.add_member' | translate}}</h3>
+  <h3 class="text-center lead" *ngIf="memberId">{{'DETAILS.edit_member' | translate}}</h3>
+  <br />
+  <form [formGroup]="memberForm" (ngSubmit)="onSubmit(memberForm)" *ngIf="showForm">
+    <div>
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="firstName" placeholder="{{'DETAILS.first_name' | translate}}"
+            formControlName="firstName" maxlength="30" required />
+          <p [hidden]="memberForm.controls.firstName.valid || !memberForm.controls.firstName.dirty" class="text-danger">
+            {{'GENERAL.required' | translate}}
+          </p>
+        </div>
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="lastName" placeholder="{{'DETAILS.last_name' | translate}}"
+            formControlName="lastName" maxlength="30" required />
+          <p [hidden]="memberForm.controls.lastName.valid || !memberForm.controls.lastName.dirty" class="text-danger">
+            {{'GENERAL.required' | translate}}
+          </p>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <div class="col-md-6">
+          <input type="text" class="form-control" id="jobTitle" placeholder="{{'DETAILS.job_title' | translate}}"
+            formControlName="jobTitle" maxlength="60" required />
+          <p [hidden]="memberForm.controls.jobTitle.valid || !memberForm.controls.jobTitle.dirty" class="text-danger">
+            {{'GENERAL.required' | translate}}
+          </p>
+        </div>
+        <select id="team" class="col-md-6 custom-select" formControlName="team" required>
+          <option *ngFor="let team of teams" [ngValue]="team">{{ team.teamName }}</option>
+        </select>
+      </div>
+      <br />
+      <div class="form-group col-md-6">
+        <div class="row">
+          <label id="activeStatus" class="md-check lead">
+            <input type="radio" formControlName="status" value="Active" name="status" />
+            {{'DETAILS.active' | translate}}
+          </label>
+          <label class="md-check lead">
+            <input type="radio" formControlName="status" value="Inactive" name="status" />
+            {{'DETAILS.inactive' | translate}}
+          </label>
+        </div>
+      </div>
+    </div>
+    <span class="pull-right">
+      <!--Disable if form is invalid or not dirty-->
+      <button type="submit" [disabled]="!memberForm.valid || !memberForm.dirty" class="btn btn-primary mr-1">
+        {{'DETAILS.save_member' | translate}}
+      </button>
+      <button routerLink="/members" class="btn">
+        {{'GENERAL.cancel' | translate}}
+      </button>
+    </span>
+  </form>
+</div>

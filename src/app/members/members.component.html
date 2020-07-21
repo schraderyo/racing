@@ -1,0 +1,33 @@
+<div class="container-fluid">
+  <button id="addMemberButton" class="btn btn-primary pull-right" (click)="goToAddMemberForm()">{{'MEMBER.add_member' | translate}}</button>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>{{'MEMBER.member_id' | translate}}</th>
+        <th>{{'MEMBER.first_name' | translate}}</th>
+        <th>{{'MEMBER.last_name' | translate}}</th>
+        <th>{{'MEMBER.job_title' | translate}}</th>
+        <th>{{'MEMBER.racing_team' | translate}}</th>
+        <th>{{'MEMBER.status' | translate}}</th>
+        <th>{{'MEMBER.actions' | translate}}</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor='let member of members'>
+        <td>{{member?.id}}</td>
+        <td>{{member?.firstName}}</td>
+        <td>{{member?.lastName}}</td>
+        <td>{{member?.jobTitle}}</td>
+        <td>{{member?.team}}</td>
+        <td>{{member?.status}}</td>
+        <td>
+          <button class="btn btn-primary mr-1 mb-sm-1" (click)="editMemberByID(member?.id)">{{'MEMBER.edit' | translate}}</button>
+          <button type="button" class="btn btn-primary mb-sm-1" data-toggle="modal" data-target="#exampleModal"
+            (click)="deleteMemberById(member?.id)">
+            {{'MEMBER.delete' | translate}}
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

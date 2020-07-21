@@ -1,0 +1,16 @@
+<div class="jumbotron jumbotron-fluid">
+  <div class="container">
+    <h1 class="display-4">{{'GENERAL.title' | translate}}</h1>
+    <p class="lead">{{'GENERAL.subtitle' | translate}}</p>
+  </div>
+</div>
+<div class="container-fluid" *ngIf="userService.username">
+  <div class="row">
+    <div class="col-12">
+      <div class="pull-right">
+        <p class="welcome">{{'GENERAL.welcome' | translate}} {{ userService.username }},
+          <span (click)="logout()" class="logout text-primary">{{'GENERAL.logout' | translate}}</span></p>
+      </div>
+    </div>
+  </div>
+</div>

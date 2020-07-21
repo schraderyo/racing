@@ -1,0 +1,40 @@
+{
+    "GENERAL": {
+        "title": "Racing",
+        "subtitle": "Redefining digital frontiers.",
+        "member_status": "Member Status",
+        "member_details": "Member Details",
+        "welcome": "Welcome",
+        "logout": "logout here",
+        "cancel": "Cancel",
+        "required": "Field is Required"
+    },
+    "DETAILS": {
+        "add_member": "Add Member to Racing Team",
+        "edit_member": "Edit Member on Racing Team",
+        "save_member": "Save Member",
+        "active": "Active",
+        "inactive": "Inactive",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "job_title": "Job Title"
+    },
+    "LOGIN": {
+        "login": "Login",
+        "username": "Username",
+        "password": "Password",
+        "remember_me": "Remember Me"
+    },
+    "MEMBER": {
+        "add_member": "Add Member",
+        "member_id": "Member ID",
+        "first_name": "First Name",
+        "last_name": "Last Name",
+        "job_title": "Job Title",
+        "racing_team": "Racing Team",
+        "status": "Status",
+        "actions": "Actions",
+        "edit": "Edit",
+        "delete": "Delete"
+    }
+}
